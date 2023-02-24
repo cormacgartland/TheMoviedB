@@ -51,8 +51,6 @@ const Movies = ({ poster_path, title, release_date, overview }) => {
 
     const handleShow = () => {
         setShow(!show);
-        // This was giving me problems so... ya know...
-        // console.log("What the hell")
     }
 
     return (
