@@ -9,7 +9,9 @@ const NavBarContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-image: linear-gradient(90deg, #282c34, #687387);
+    /* background-image: linear-gradient(90deg, #282c34, #687387); */
+    background-color: rgb(35, 40, 48);
+    box-shadow: 0 2px 8px lightgray;
 `
 
 const NavHome = styled.div`
@@ -32,19 +34,19 @@ const NavBarHome = styled.a`
     }
 `
 
-const SearchBar = styled.input`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    border-radius: 20px;
-    background-color: #ddd7;
-    color: black;
+// const SearchBar = styled.input`
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     border: none;
+//     border-radius: 20px;
+//     background-color: #ddd7;
+//     color: black;
 
-    &::placeholder {
-        text-align: center;
-    }
-`
+//     &::placeholder {
+//         text-align: center;
+//     }
+// `
 
 const PageItems = styled.div`
     display: flex;
@@ -56,6 +58,7 @@ const NavBarItems = styled.a`
     display: flex;
     flex-direction: row;
     text-decoration: none;
+    margin: 10px;
     padding: 18px;
     bottom: 30px;
     border-radius: 25px;
@@ -73,7 +76,7 @@ const NavBar = ({ pageIncrease, pageDecrease, goHome }) => {
         <NavHome>
             <NavBarHome onClick={goHome}>Home</NavBarHome>
         </NavHome>
-        <SearchBar type="text" placeholder='Search...?' />
+        {/* <SearchBar type="text" placeholder='Search...?' /> */}
         <PageItems>
             <NavBarItems onClick={pageDecrease}>&lt; Page</NavBarItems>
             <NavBarItems onClick={pageIncrease}>Page &gt;</NavBarItems>        

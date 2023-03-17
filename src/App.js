@@ -8,16 +8,17 @@ import NavBar from './components/NavBar';
 
 // API Stuff
 const API_URL = 'https://api.themoviedb.org/3'
-const API_KEY = ''
+const API_KEY = '92658958da9ffd5361fd1a67e3b34d5d'
 
 // style
+const Cont = styled.div`
+  background-color: #282c34;
+`
 const Arp = styled.div`
   display: grid;
   grid-template-columns: repeat(4,1fr);
   grid-gap: 0.2em;
   justify-content: center;
-  background-color: #282c34;
-  
 `
 
 function App() {
@@ -55,7 +56,8 @@ function App() {
 
 
   return (
-    <>    
+    <>
+    <Cont>
       <NavBar
         pageNumber={pageNumber}
         pageIncrease={pageIncrease}
@@ -65,10 +67,11 @@ function App() {
       <Arp>
         {movieData.map((data) => {
           return(
-              <Movies {...data} key={data.id} />
-          )
-        })}
+            <Movies {...data} key={data.id} />
+            )
+          })}
       </Arp>
+      </Cont>    
             
     </>
   );

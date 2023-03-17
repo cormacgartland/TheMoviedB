@@ -4,9 +4,10 @@ import styled from 'styled-components';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500'
 
 const Background = styled.div`
-  width: 75vw;
+  width: 40vw;
   height: 75vh;
   background: rgba(0, 0, 0, 0.7);
+  border: 5px solid rgba(255, 0, 0, 0.2);
   border-radius: 10px;
   position: absolute;
   display: flex;
@@ -77,37 +78,17 @@ const Button = styled.button`
 const MovieDetail = ( { handleClose, poster_path, title, overview, release_date, modal} ) => {
   return (
     <>
-      {/* <div>{movieData.map((data) => {
-        return (
-            <>
-              <Background>
-              <ModalContainer key={data.id} >
-              <Image src={`${IMG_URL}/${data.poster_path}`} onClick={modal}/>
-                <Title>{data.title}</Title>
-                <ReleaseDate>{data.release_date}</ReleaseDate>
-                <Description>{data.overview}</Description>
-                
-                <Button onClick={modal}>
-                  Go Back
-              </Button>
-              </ModalContainer>
-              </Background>
-            </>
-        )
-      })}
-      </div> */}
-
-          <Background>
-            <ModalContainer>
-              <Image src={`${IMG_URL}/${poster_path}`} />
-                <Title>{title}</Title>
-                <ReleaseDate>{release_date}</ReleaseDate>
-                <Description>{overview}</Description>                
-                <Button onClick={handleClose}>
-                  Close
-              </Button>
-            </ModalContainer>
-          </Background>
+      <Background>
+        <ModalContainer>
+          <Image src={`${IMG_URL}/${poster_path}`} />
+            <Title>{title}</Title>
+            <ReleaseDate>{release_date}</ReleaseDate>
+            <Description>{overview}</Description>                
+            <Button onClick={handleClose}>
+              Close
+          </Button>
+        </ModalContainer>
+      </Background>
     </>
   )
 }
